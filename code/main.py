@@ -20,6 +20,7 @@ class Player(pygame.sprite.Sprite):
     def laser_timer(self):
         if not self.can_shoot:
             current_time = pygame.time.get_ticks()
+            print(current_time)
 
     def update(self, dt):
         # input
@@ -33,6 +34,7 @@ class Player(pygame.sprite.Sprite):
         if recent_keys[pygame.K_SPACE] and self.can_shoot:
             print('fire laser')
             self.can_shoot = False
+        self.laser_timer()
 
 class Star(pygame.sprite.Sprite):
     def __init__(self, groups, surf):
