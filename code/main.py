@@ -16,6 +16,10 @@ class Player(pygame.sprite.Sprite):
         self.can_shoot = True
         self.laser_shoot_time = 0
         self.cooldown_duration = 400
+    
+    def laser_timer(self):
+        if not self.can_shoot:
+            current_time = pygame.time.get_ticks()
 
     def update(self, dt):
         # input
